@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="weather-card">
+    <h1>🌤️ Vibe Weather</h1>
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name">
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="error" id="error">City not found 😅</div>
+
+    <div class="weather-info" id="weatherInfo">
+      <div class="city" id="cityName">Bangalore</div>
+      <div class="temp" id="temperature">28°</div>
+      <div class="desc" id="description">clear sky</div>
+      <div class="details">
+        <div>💨 <span id="wind">5</span> km/h</div>
+        <div>💧 <span id="humidity">60</span>%</div>
+        <p class="last-updated" id="lastUpdated"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
