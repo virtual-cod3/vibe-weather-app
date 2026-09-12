@@ -1,35 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vibe Weather App</title>
+
+  <title>Vibe Weather</title>
+
   <link rel="stylesheet" href="style.css">
-  
 </head>
+
 <body>
-  <div class="weather-card">
-    <h1>🌤️ Vibe Weather</h1>
 
-    <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Enter city name">
-      <button id="searchBtn">Search</button>
-    </div>
+  <div class="app">
 
-    <div class="error" id="error">City not found 😅</div>
+    <!-- Header -->
+    <header class="header">
 
-    <div class="weather-info" id="weatherInfo">
-      <div class="city" id="cityName">Bangalore</div>
-      <div class="temp" id="temperature">28°</div>
-      <div class="desc" id="description">clear sky</div>
-      <div class="details">
-        <div>💨 <span id="wind">5</span> km/h</div>
-        <div>💧 <span id="humidity">60</span>%</div>
-        <p class="last-updated" id="lastUpdated"></p>
+      <div>
+        <h1>🌤️ Vibe Weather</h1>
+        <p>Live weather, wherever you are</p>
       </div>
+
+      <button id="themeBtn" class="icon-btn" title="Toggle theme">
+        🌙
+      </button>
+
+    </header>
+
+
+    <!-- Search -->
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Search city..."
+        autocomplete="off"
+      >
+
+      <button id="searchBtn">
+        🔍 Search
+      </button>
+
     </div>
+
+
+    <!-- Location + Refresh -->
+    <div class="action-buttons">
+
+      <button id="locationBtn">
+        📍 Use My Location
+      </button>
+
+      <button id="refreshBtn">
+        🔄 Refresh
+      </button>
+
+    </div>
+
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+
+      <div class="spinner"></div>
+
+      <p>Getting weather...</p>
+
+    </div>
+
+
+    <!-- Error -->
+    <div class="error" id="error"></div>
+
+
+    <!-- Current Weather -->
+    <main id="weatherInfo" class="weather-info">
+
+      <!-- Location -->
+      <div class="location">
+
+        <h2 id="cityName">
+          Bangalore, IN
+        </h2>
+
+        <p id="dateTime">
+          Loading...
+        </p>
+
+      </div>
+
+
+      <!-- Main Weather -->
+      <section class="main-weather">
+
+        <img
+          id="weatherIcon"
+          class="weather-icon"
+          src=""
+          alt="Weather icon"
+        >
+
+        <div>
+
+          <div id="temperature" class="temperature">
+            --°C
+          </div>
+
+          <div id="description" class="description">
+            --
+          </div>
+
+          <div class="feels">
+            Feels like
+            <strong id="feelsLike">--°C</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- Weather Details -->
+      <section class="details">
+
+        <div class="detail-card">
+
+          <span class="detail-icon">💧</span>
+
+          <span class="detail-title">
+            Humidity
+          </span>
+
+          <strong>
+            <span id="humidity">--</span>%
+          </strong>
+
+        </div>
+
+
+        <div class="detail-card">
+
+          <span class="detail-icon">💨</span>
+
+          <span class="detail-title">
+            Wind
+          </span>
+
+          <strong>
+            <span id="wind">--</span> km/h
+          </strong>
+
+        </div>
+
+
+        <div class="detail-card">
+
+          <span class="detail-icon">🧭</span>
+
+          <span class="detail-title">
+            Direction
+          </span>
+
+          <strong id="windDirection">
+            --
+          </strong>
+
+        </div>
+
+
+        <div class="detail-card">
+
+          <span class="detail-icon">⏱️</span>
+
+          <span class="detail-title">
+            Pressure
+          </span>
+
+          <strong>
+            <span id="pressure">--</span> hPa
+          </strong>
+
+        </div>
+
+
+        <div class="detail-card">
+
+          <span class="detail-icon">👁️</span>
+
+          <span class="detail-title">
+            Visibility
+          </span>
+
+          <strong id="visibility">
+            -- km
+          </strong>
+
+        </div>
+
+
+        <div class="detail-card">
+
+          <span class="detail-icon">☁️</span>
+
+          <span class="detail-title">
+            Clouds
+          </span>
+
+          <strong>
+            <span id="clouds">--</span>%
+          </strong>
+
+        </div>
+
+      </section>
+
+
+      <!-- Sunrise / Sunset -->
+      <section class="sun-section">
+
+        <div class="sun-card">
+
+          <span>🌅</span>
+
+          <div>
+            <small>Sunrise</small>
+            <strong id="sunrise">--</strong>
+          </div>
+
+        </div>
+
+
+        <div class="sun-card">
+
+          <span>🌇</span>
+
+          <div>
+            <small>Sunset</small>
+            <strong id="sunset">--</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- Forecast -->
+      <section class="forecast-section">
+
+        <div class="section-title">
+
+          <h3>5-Day Forecast</h3>
+
+        </div>
+
+        <div id="forecast" class="forecast">
+
+          <!-- Forecast cards generated by JavaScript -->
+
+        </div>
+
+      </section>
+
+
+      <!-- Last Updated -->
+      <p id="lastUpdated" class="last-updated">
+        Last updated: --
+      </p>
+
+    </main>
+
   </div>
 
+
   <script src="script.js"></script>
+
 </body>
+
 </html>
