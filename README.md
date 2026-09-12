@@ -5,7 +5,8 @@ for any location using the OpenWeather API.
 
 ## 🌐 Live Demo
 
-👉 [Visit Vibe Weather](https://virtual-cod3.github.io/weather-app/)
+👉 [Visit Vibe Weather]
+https://virtual-cod3.github.io/weather-app/
 
 ## ✨ Features
 
